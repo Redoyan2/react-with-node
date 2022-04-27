@@ -25,7 +25,8 @@ const Data = () => {
         })
         .then(res => res.json())
         .then(data=>{
-            console.log(data);
+            const newUsers = [...users, data];
+            setUsers(newUsers)
         })
     }
 
@@ -42,7 +43,7 @@ const Data = () => {
           <div>
               {
                   users.map(user=>
-                      <h3 key={user.id}> Id: {user.id} name: {user.name}</h3>
+                      <h3 key={user.id}> Id: {user.id}, name: {user.name}</h3>
                   )
               }
           </div>
